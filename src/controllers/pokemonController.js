@@ -13,6 +13,7 @@ export const getAllPokemon = async (req ,res)=>{
 };
 
 export const getPokemonByName = async (req, res) => {
+         console.log("✅ GET /api/v1/pokemon endpoint was hit"); 
     try{
         const name = req.params.name.toLowerCase();
         let pokemon = await Pokemon.findOne({name})

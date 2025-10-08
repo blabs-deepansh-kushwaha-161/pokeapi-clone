@@ -7,13 +7,13 @@ import pokemonRoutes from './routes/pokemonRoutes.js';
 dotenv.config();
 
 const app = express();
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
     res.send('Welcome to the PokeAPI Clone');
 });
-app.use('/api/v2/', pokemonRoutes);
+app.use(pokemonRoutes);
 
 
 const PORT = process.env.PORT || 3000;
