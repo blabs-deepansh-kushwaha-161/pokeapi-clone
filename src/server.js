@@ -1,10 +1,10 @@
 import dotenv from 'dotenv';
-dotenv.config();
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import pokemonRoutes from './routes/pokemonRoutes.js';
 
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -13,7 +13,8 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send('Welcome to the PokeAPI Clone');
 });
-app.use('/api/v2/pokemon', pokemonRoutes);
+app.use('/api/v2/', pokemonRoutes);
+
 
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI;

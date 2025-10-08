@@ -43,6 +43,4 @@ const pokemonSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-const Pokemon = mongoose.model("Pokemon", pokemonSchema);
-
-export default Pokemon;
+export default mongoose.model("Pokemon", pokemonSchema);

@@ -2,8 +2,9 @@ import Pokemon from "../models/pokemon.js";
 
 
 export const getAllPokemon = async (req ,res)=>{
+     console.log("✅ GET /api/v1/pokemon endpoint was hit"); 
     try{
-        const pokemons = await Pokemon.find().skip(0).limit(20);
+        const pokemons = await Pokemon.find().skip(0).limit(30);
         res.json(pokemons);
         console.log(pokemons)
     }catch(error){
